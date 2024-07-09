@@ -1,115 +1,3 @@
-/**
- * DataTables Basic
- */
-
-'use strict';
-
-let fv, offCanvasEl;
-document.addEventListener('DOMContentLoaded', function (e) {
-  (function () {
-    const formAddNewRecord = document.getElementById('form-add-new-record');
-
-    setTimeout(() => {
-      const newRecord = document.querySelector('.create-new'),
-        offCanvasElement = document.querySelector('#add-new-record');
-
-      // To open offCanvas, to add new record
-      if (newRecord) {
-        newRecord.addEventListener('click', function () {
-          offCanvasEl = new bootstrap.Offcanvas(offCanvasElement);
-          // Empty fields on offCanvas open
-          (offCanvasElement.querySelector('.dt-full-name').value = ''),
-            (offCanvasElement.querySelector('.dt-post').value = ''),
-            (offCanvasElement.querySelector('.dt-email').value = ''),
-            (offCanvasElement.querySelector('.dt-date').value = ''),
-            (offCanvasElement.querySelector('.dt-salary').value = '');
-          // Open offCanvas with form
-          offCanvasEl.show();
-        });
-      }
-    }, 200);
-
-    // Form validation for Add new record
-    fv = FormValidation.formValidation(formAddNewRecord, {
-      fields: {
-        basicFullname: {
-          validators: {
-            notEmpty: {
-              message: 'The name is required'
-            }
-          }
-        },
-        basicPost: {
-          validators: {
-            notEmpty: {
-              message: 'Post field is required'
-            }
-          }
-        },
-        basicEmail: {
-          validators: {
-            notEmpty: {
-              message: 'The Email is required'
-            },
-            emailAddress: {
-              message: 'The value is not a valid email address'
-            }
-          }
-        },
-        basicDate: {
-          validators: {
-            notEmpty: {
-              message: 'Joining Date is required'
-            },
-            date: {
-              format: 'MM/DD/YYYY',
-              message: 'The value is not a valid date'
-            }
-          }
-        },
-        basicSalary: {
-          validators: {
-            notEmpty: {
-              message: 'Basic Salary is required'
-            }
-          }
-        }
-      },
-      plugins: {
-        trigger: new FormValidation.plugins.Trigger(),
-        bootstrap5: new FormValidation.plugins.Bootstrap5({
-          // Use this for enabling/changing valid/invalid class
-          // eleInvalidClass: '',
-          eleValidClass: '',
-          rowSelector: '.col-sm-12'
-        }),
-        submitButton: new FormValidation.plugins.SubmitButton(),
-        // defaultSubmit: new FormValidation.plugins.DefaultSubmit(),
-        autoFocus: new FormValidation.plugins.AutoFocus()
-      },
-      init: instance => {
-        instance.on('plugins.message.placed', function (e) {
-          if (e.element.parentElement.classList.contains('input-group')) {
-            e.element.parentElement.insertAdjacentElement('afterend', e.messageElement);
-          }
-        });
-      }
-    });
-
-    // FlatPickr Initialization & Validation
-    flatpickr(formAddNewRecord.querySelector('[name="basicDate"]'), {
-      enableTime: false,
-      // See https://flatpickr.js.org/formatting/
-      dateFormat: 'm/d/Y',
-      // After selecting a date, we need to revalidate the field
-      onChange: function () {
-        fv.revalidateField('basicDate');
-      }
-    });
-  })();
-});
-
-// datatable (jquery)
 $(function () {
   var dt_basic_table = $('.datatables-basic'),
     dt_complex_header_table = $('.dt-complex-header'),
@@ -124,15 +12,14 @@ $(function () {
     dt_basic = dt_basic_table.DataTable({
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: '' },
-        { data: 'id' },
-        { data: 'id' },
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'status' },
-        { data: '' }
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
       ],
       columnDefs: [
         {
@@ -166,69 +53,24 @@ $(function () {
           visible: false
         },
         {
-          // Avatar image/badge, Name and post
-          targets: 3,
+          // Employee
+          targets: 0,
           responsivePriority: 4,
           render: function (data, type, full, meta) {
-            var $user_img = full['avatar'],
-              $name = full['full_name'],
-              $post = full['post'];
-            if ($user_img) {
-              // For Avatar image
-              var $output =
-                '<img src="' + assetsPath + 'img/avatars/' + $user_img + '" alt="Avatar" class="rounded-circle">';
-            } else {
-              // For Avatar badge
-              var stateNum = Math.floor(Math.random() * 6);
-              var states = ['success', 'danger', 'warning', 'info', 'primary', 'secondary'];
-              var $state = states[stateNum],
-                $name = full['full_name'],
-                $initials = $name.match(/\b\w/g) || [];
-              $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
-              $output = '<span class="avatar-initial rounded-circle bg-label-' + $state + '">' + $initials + '</span>';
-            }
-            // Creates full output for row
-            var $row_output =
-              '<div class="d-flex justify-content-start align-items-center user-name">' +
-              '<div class="avatar-wrapper">' +
-              '<div class="avatar me-2">' +
-              $output +
-              '</div>' +
-              '</div>' +
-              '<div class="d-flex flex-column">' +
-              '<span class="emp_name text-truncate">' +
-              $name +
-              '</span>' +
-              '<small class="emp_post text-truncate text-muted">' +
-              $post +
-              '</small>' +
-              '</div>' +
-              '</div>';
-            return $row_output;
+            var $employee = full['employee'];
+            return '<span class="emp_name text-truncate">' + $employee + '</span>';
           }
         },
         {
           responsivePriority: 1,
-          targets: 4
+          targets: 1
         },
         {
-          // Label
-          targets: -2,
+          // Completed
+          targets: 7,
           render: function (data, type, full, meta) {
-            var $status_number = full['status'];
-            var $status = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: ' bg-label-success' },
-              3: { title: 'Rejected', class: ' bg-label-danger' },
-              4: { title: 'Resigned', class: ' bg-label-warning' },
-              5: { title: 'Applied', class: ' bg-label-info' }
-            };
-            if (typeof $status[$status_number] === 'undefined') {
-              return data;
-            }
-            return (
-              '<span class="badge ' + $status[$status_number].class + '">' + $status[$status_number].title + '</span>'
-            );
+            var $completed = full['completed'];
+            return '<span class="badge ' + ($completed ? 'bg-label-success' : 'bg-label-danger') + '">' + ($completed ? 'Yes' : 'No') + '</span>';
           }
         },
         {
@@ -268,8 +110,7 @@ $(function () {
               text: '<i class="ti ti-printer me-1" ></i>Print',
               className: 'dropdown-item',
               exportOptions: {
-                columns: [3, 4, 5, 6, 7],
-                // prevent avatar to be display
+                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -287,7 +128,6 @@ $(function () {
                 }
               },
               customize: function (win) {
-                //customize print view for dark
                 $(win.document.body)
                   .css('color', config.colors.headingColor)
                   .css('border-color', config.colors.borderColor)
@@ -305,8 +145,7 @@ $(function () {
               text: '<i class="ti ti-file-text me-1" ></i>Csv',
               className: 'dropdown-item',
               exportOptions: {
-                columns: [3, 4, 5, 6, 7],
-                // prevent avatar to be display
+                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -329,8 +168,7 @@ $(function () {
               text: 'Excel',
               className: 'dropdown-item',
               exportOptions: {
-                columns: [3, 4, 5, 6, 7],
-                // prevent avatar to be display
+                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -353,8 +191,7 @@ $(function () {
               text: '<i class="ti ti-file-description me-1"></i>Pdf',
               className: 'dropdown-item',
               exportOptions: {
-                columns: [3, 4, 5, 6, 7],
-                // prevent avatar to be display
+                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -377,8 +214,7 @@ $(function () {
               text: '<i class="ti ti-copy me-1" ></i>Copy',
               className: 'dropdown-item',
               exportOptions: {
-                columns: [3, 4, 5, 6, 7],
-                // prevent avatar to be display
+                columns: [0, 1, 2, 3, 4, 5, 6, 7],
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -408,7 +244,7 @@ $(function () {
           display: $.fn.dataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['full_name'];
+              return 'Details of ' + data['employee'];
             }
           }),
           type: 'column',
@@ -444,22 +280,26 @@ $(function () {
   var count = 101;
   // On form submit, if form is valid
   fv.on('core.form.valid', function () {
-    var $new_name = $('.add-new-record .dt-full-name').val(),
-      $new_post = $('.add-new-record .dt-post').val(),
-      $new_email = $('.add-new-record .dt-email').val(),
-      $new_date = $('.add-new-record .dt-date').val(),
-      $new_salary = $('.add-new-record .dt-salary').val();
+    var $new_employee = $('.add-new-record .dt-employee').val(),
+      $new_document = $('.add-new-record .dt-document').val(),
+      $new_office = $('.add-new-record .dt-office').val(),
+      $new_initial_date = $('.add-new-record .dt-initial-date').val(),
+      $new_initial_time = $('.add-new-record .dt-initial-time').val(),
+      $new_end_date = $('.add-new-record .dt-end-date').val(),
+      $new_end_time = $('.add-new-record .dt-end-time').val(),
+      $new_completed = $('.add-new-record .dt-completed').val();
 
-    if ($new_name != '') {
+    if ($new_employee != '') {
       dt_basic.row
         .add({
-          id: count,
-          full_name: $new_name,
-          post: $new_post,
-          email: $new_email,
-          start_date: $new_date,
-          salary: '$' + $new_salary,
-          status: 5
+          employee: $new_employee,
+          document: $new_document,
+          office: $new_office,
+          initial_date: $new_initial_date,
+          initial_time: $new_initial_time,
+          end_date: $new_end_date,
+          end_time: $new_end_time,
+          completed: $new_completed
         })
         .draw();
       count++;
@@ -481,33 +321,22 @@ $(function () {
     var dt_complex = dt_complex_header_table.DataTable({
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'city' },
-        { data: 'post' },
-        { data: 'salary' },
-        { data: 'status' },
-        { data: '' }
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
       ],
       columnDefs: [
         {
           // Label
           targets: -2,
           render: function (data, type, full, meta) {
-            var $status_number = full['status'];
-            var $status = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: ' bg-label-success' },
-              3: { title: 'Rejected', class: ' bg-label-danger' },
-              4: { title: 'Resigned', class: ' bg-label-warning' },
-              5: { title: 'Applied', class: ' bg-label-info' }
-            };
-            if (typeof $status[$status_number] === 'undefined') {
-              return data;
-            }
-            return (
-              '<span class="badge ' + $status[$status_number].class + '">' + $status[$status_number].title + '</span>'
-            );
+            var $completed = full['completed'];
+            return '<span class="badge ' + ($completed ? 'bg-label-success' : 'bg-label-danger') + '">' + ($completed ? 'Yes' : 'No') + '</span>';
           }
         },
         {
@@ -545,15 +374,14 @@ $(function () {
     var groupingTable = dt_row_grouping_table.DataTable({
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: '' },
-        { data: 'full_name' },
-        { data: 'post' },
-        { data: 'email' },
-        { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'status' },
-        { data: '' }
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
       ],
       columnDefs: [
         {
@@ -571,20 +399,8 @@ $(function () {
           // Label
           targets: -2,
           render: function (data, type, full, meta) {
-            var $status_number = full['status'];
-            var $status = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: ' bg-label-success' },
-              3: { title: 'Rejected', class: ' bg-label-danger' },
-              4: { title: 'Resigned', class: ' bg-label-warning' },
-              5: { title: 'Applied', class: ' bg-label-info' }
-            };
-            if (typeof $status[$status_number] === 'undefined') {
-              return data;
-            }
-            return (
-              '<span class="badge ' + $status[$status_number].class + '">' + $status[$status_number].title + '</span>'
-            );
+            var $completed = full['completed'];
+            return '<span class="badge ' + ($completed ? 'bg-label-success' : 'bg-label-danger') + '">' + ($completed ? 'Yes' : 'No') + '</span>';
           }
         },
         {
@@ -636,7 +452,7 @@ $(function () {
           display: $.fn.dataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['full_name'];
+              return 'Details of ' + data['employee'];
             }
           }),
           type: 'column',
@@ -684,14 +500,14 @@ $(function () {
     var table_language = dt_multilingual_table.DataTable({
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: '' },
-        { data: 'full_name' },
-        { data: 'post' },
-        { data: 'email' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'status' },
-        { data: '' }
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
       ],
       columnDefs: [
         {
@@ -708,20 +524,8 @@ $(function () {
           // Label
           targets: -2,
           render: function (data, type, full, meta) {
-            var $status_number = full['status'];
-            var $status = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: ' bg-label-success' },
-              3: { title: 'Rejected', class: ' bg-label-danger' },
-              4: { title: 'Resigned', class: ' bg-label-warning' },
-              5: { title: 'Applied', class: ' bg-label-info' }
-            };
-            if (typeof $status[$status_number] === 'undefined') {
-              return data;
-            }
-            return (
-              '<span class="badge ' + $status[$status_number].class + '">' + $status[$status_number].title + '</span>'
-            );
+            var $completed = full['completed'];
+            return '<span class="badge ' + ($completed ? 'bg-label-success' : 'bg-label-danger') + '">' + ($completed ? 'Yes' : 'No') + '</span>';
           }
         },
         {
@@ -757,7 +561,7 @@ $(function () {
           display: $.fn.dataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['full_name'];
+              return 'Details of ' + data['employee'];
             }
           }),
           type: 'column',

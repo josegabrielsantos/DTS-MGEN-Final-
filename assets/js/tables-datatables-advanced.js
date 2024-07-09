@@ -12,6 +12,41 @@ $(function () {
     startDateEle = $('.start_date'),
     endDateEle = $('.end_date');
 
+  // Provided Dummy Data
+  var dummyData = [
+    {
+      employee: "Korrie O'Crevy",
+      document: "Report",
+      office: "Krasnosilka",
+      initial_date: "09/23/2021",
+      initial_time: "09:00 AM",
+      end_date: "09/24/2021",
+      end_time: "05:00 PM",
+      completed: true
+    },
+    {
+      employee: "Bailie Coulman",
+      document: "Invoice",
+      office: "Hinigaran",
+      initial_date: "05/20/2021",
+      initial_time: "10:00 AM",
+      end_date: "05/21/2021",
+      end_time: "04:00 PM",
+      completed: true
+    },
+    {
+      employee: "Stella Ganderton",
+      document: "Operator",
+      office: "Golcowa",
+      initial_date: "03/24/2021",
+      initial_time: "08:00 AM",
+      end_date: "03/25/2021",
+      end_time: "03:00 PM",
+      completed: false
+    },
+    // Add more dummy records as needed
+  ];
+
   // Advanced Search Functions Starts
   // --------------------------------------------------------------------
 
@@ -97,7 +132,17 @@ $(function () {
   if (dt_ajax_table.length) {
     var dt_ajax = dt_ajax_table.dataTable({
       processing: true,
-      ajax: assetsPath + 'json/ajax.php',
+      data: dummyData,
+      columns: [
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
+      ],
       dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>><"table-responsive"t><"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>'
     });
   }
@@ -120,14 +165,16 @@ $(function () {
     });
 
     var dt_filter = dt_filter_table.DataTable({
-      ajax: assetsPath + 'json/table-datatable.json',
+      data: dummyData,
       columns: [
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'post' },
-        { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' }
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
       ],
       orderCellsTop: true,
       dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>><"table-responsive"t><"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>'
@@ -141,15 +188,17 @@ $(function () {
   if (dt_adv_filter_table.length) {
     var dt_adv_filter = dt_adv_filter_table.DataTable({
       dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6 dataTables_pager'p>>",
-      ajax: assetsPath + 'json/table-datatable.json',
+      data: dummyData,
       columns: [
         { data: '' },
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'post' },
-        { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' }
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
       ],
 
       columnDefs: [
@@ -168,7 +217,7 @@ $(function () {
           display: $.fn.dataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['full_name'];
+              return 'Details of ' + data['employee'];
             }
           }),
           type: 'column',
@@ -208,18 +257,17 @@ $(function () {
 
   if (dt_responsive_table.length) {
     var dt_responsive = dt_responsive_table.DataTable({
-      ajax: assetsPath + 'json/table-datatable.json',
+      data: dummyData,
       columns: [
         { data: '' },
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'post' },
-        { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'age' },
-        { data: 'experience' },
-        { data: 'status' }
+        { data: 'employee' },
+        { data: 'document' },
+        { data: 'office' },
+        { data: 'initial_date' },
+        { data: 'initial_time' },
+        { data: 'end_date' },
+        { data: 'end_time' },
+        { data: 'completed' }
       ],
       columnDefs: [
         {
@@ -235,20 +283,9 @@ $(function () {
           // Label
           targets: -1,
           render: function (data, type, full, meta) {
-            var $status_number = full['status'];
-            var $status = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: ' bg-label-success' },
-              3: { title: 'Rejected', class: ' bg-label-danger' },
-              4: { title: 'Resigned', class: ' bg-label-warning' },
-              5: { title: 'Applied', class: ' bg-label-info' }
-            };
-            if (typeof $status[$status_number] === 'undefined') {
-              return data;
-            }
-            return (
-              '<span class="badge ' + $status[$status_number].class + '">' + $status[$status_number].title + '</span>'
-            );
+            var $status = full['completed'] ? 'Completed' : 'Pending';
+            var $class = full['completed'] ? 'bg-label-success' : 'bg-label-warning';
+            return '<span class="badge ' + $class + '">' + $status + '</span>';
           }
         }
       ],
@@ -260,7 +297,7 @@ $(function () {
           display: $.fn.dataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['full_name'];
+              return 'Details of ' + data['employee'];
             }
           }),
           type: 'column',
