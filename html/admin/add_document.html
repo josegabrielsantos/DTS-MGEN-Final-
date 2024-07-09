@@ -15,7 +15,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Cards Advance- UI elements | Vuexy - Bootstrap Admin Template</title>
+    <title>Validation - Forms | Vuexy - Bootstrap Admin Template</title>
 
     <meta name="description" content="" />
 
@@ -44,16 +44,15 @@
     <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/swiper/swiper.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/tagify/tagify.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/css/pages/cards-advance.css" />
+
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
 
@@ -67,7 +66,7 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
-        
+
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
@@ -101,7 +100,7 @@
                   />
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold">DTS</span>
+              <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -158,14 +157,6 @@
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-                <!-- Style Switcher -->
-                <li class="nav-item me-2 me-xl-0">
-                  <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
-                    <i class="ti ti-md"></i>
-                  </a>
-                </li>
-                <!--/ Style Switcher -->
 
                 <!-- Notification -->
                 <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
@@ -517,351 +508,448 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Dashbooard</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Add Document</h4>
+              <div class="row mb-4">
 
+
+              </div>
               <div class="row">
-                <!-- Responsive Table -->
-              <div class="card">
-                <h5 class="card-header">All Documents</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table">
-                    <thead>
-                      <tr class="text-nowrap">
-                        <th>#</th>
-                        <th>Employee</th>
-                        <th>Document</th>
-                        <th>Office</th>
-                        <th>Duration in Office</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ms. Chess Master</td>
-                        <td>Non-Disclosure Agreement (NDA)</td>
-                        <td>Admin</td>
-                        <td>2 hours and 48 mins</td>
-                        <td><span class="badge bg-label-success">Signed</span></td>
-                        <td>
-                            <a class="dropdown-item" href="admin_office.html"><i class="ti ti-file-arrow-right me-1"></i>Document History</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Mr. Lester McCarthy</td>
-                        <td>Project Proposal</td>
-                        <td>IT Department</td>
-                        <td>2 hours and 3 mins</td>
-                        <td><span class="badge bg-label-success">Signed</span></td>
-                        <td>
-                            <a class="dropdown-item" href="admin_office.html"><i class="ti ti-file-arrow-right me-1"></i>Document History</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Mr. Boom Panes</td>
-                        <td>Intern Candidate List</td>
-                        <td>Human Resources</td>
-                        <td>2 hours and 39 mins</td>
-                        <td><span class="badge bg-label-success">Signed</span></td>
-                        <td>
-                            <a class="dropdown-item" href="admin_office.html"><i class="ti ti-file-arrow-right me-1"></i>Document History</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td>Mr. Data Analyst</td>
-                        <td>Market Analysis Report</td>
-                        <td>Finance</td>
-                        <td>3 hours and 12 mins</td>
-                        <td><span class="badge bg-label-success">Completed</span></td>
-                        <td>
-                            <a class="dropdown-item" href="admin_office.html"><i class="ti ti-file-arrow-right me-1"></i>Document History</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td>Ms. Legal Eagle</td>
-                        <td>Client Contract</td>
-                        <td>Legal</td>
-                        <td>1 hour and 30 mins</td>
-                        <td><span class="badge bg-label-warning">Pending</span></td>
-                        <td>
-                            <a class="dropdown-item" href="admin_office.html"><i class="ti ti-file-arrow-right me-1"></i>Document History</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6</th>
-                        <td>Dr. Research Guru</td>
-                        <td>Feasibility Study</td>
-                        <td>Research</td>
-                        <td>4 hours and 45 mins</td>
-                        <td><span class="badge bg-label-success">Approved</span></td>
-                        <td>
-                            <a class="dropdown-item" href="admin_office.html"><i class="ti ti-file-arrow-right me-1"></i>Document History</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7</th>
-                        <td>Mr. IT Specialist</td>
-                        <td>System Upgrade Plan</td>
-                        <td>IT</td>
-                        <td>5 hours and 20 mins</td>
-                        <td><span class="badge bg-label-danger">Failed</span></td>
-                        <td>
-                            <a class="dropdown-item" href="admin_office.html"><i class="ti ti-file-arrow-right me-1"></i>Document History</a>
-                        </td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
+                <!-- FormValidation -->
+                <div class="col-12">
+                  <div class="card">
+                    <h5 class="card-header">Fill Up Form</h5>
+                    <div class="card-body">
+                      <form id="formValidationExamples" class="row g-3">
+                        <!-- Account Details -->
+
+
+                        <div class="col-md-6">
+                          <label class="form-label" for="formValidationName">Employee Name</label>
+                          <input
+                            type="text"
+                            id="formValidationEmployee"
+                            class="form-control"
+                            placeholder="John Doe"
+                            name="formValidationName"
+                          />
+                        </div>
+                        <div class="col-md-6">
+                        <label class="form-label" for="formValidationName">Office</label>
+                        <input
+                            type="text"
+                            id="formValidationName"
+                            class="form-control"
+                            placeholder=""
+                            name="formValidationName"
+                        />
+                        </div>
+                        <div class="col-md-6">
+                        <label class="form-label" for="basic-default-dob">Date Filed</label>
+                        <input
+                            type="text"
+                            class="form-control flatpickr-validation"
+                            id="basic-default-dob"
+                            required
+                        />
+                        </div>
+
+                        <div class="col-md-6">
+                        <label for="formValidationFile" class="form-label">Select Document</label>
+                        <input class="form-control" type="file" id="formValidationFile" name="formValidationFile" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                              <div class="card-body text-center">
+                                <i class="mb-3 ti ti-file-text ti-lg"></i>
+                                <h6>Add Required Signatures</h6>
+                                <button
+                                  type="button"
+                                  class="btn btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#shareProject"
+                                >
+                                  Add
+                                </button>
+                              </div>
+                            </div>
+                        </div>  
+                        <div class="col-md-6">
+                            <label class="switch switch-primary">
+                              <input type="checkbox" class="switch-input" required />
+                              <span class="switch-toggle-slider">
+                                <span class="switch-on"></span>
+                                <span class="switch-off"></span>
+                              </span>
+                              <span class="switch-label">Mark as Urgent</span>
+                            </label>
+                          </div>
+                          
+                          </div>
+
+                        <div class="col-md-6">
+                          <button type="submit" name="submitButton" class="btn btn-primary">Submit</button>
+                        </div>
+                      </form>
+                    </div>
                   
                 </div>
-                <a href = "add_document.html"class = 'dt-button create-new btn btn-primary' tableindex = '0' aria-controls="DataTables Table 0" type = "button">
-                    <span class = "d-none d-sm-inline-block">Add Document</span>
-                </a>
+                <!-- /FormValidation -->
               </div>
-              <!--/ Responsive Table -->
-                <hr class = "my-5">
+            </div>
 
-
-                <!-- Last Transaction -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                      <div class="card-header d-flex justify-content-between">
-                        <h5 class="card-title m-0 me-2">All Offices</h5>
-                        <div class="dropdown">
-                          <button
-                            class="btn p-0"
-                            type="button"
-                            id="teamMemberList"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="teamMemberList">
-                            <a class="dropdown-item" href="javascript:void(0);">Generate Report</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+            <!-- Share Project Modal -->
+            <div class="modal fade" id="shareProject" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-enable-otp modal-dialog-centered">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="text-center">
+                        <h3 class="mb-2">Add Members to the Document</h3>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <label for="select2Basic" class="form-label">Add Members</label>
+                      <select
+                        id="select2Basic"
+                        class="form-select form-select-lg share-project-select"
+                        data-allow-clear="true"
+                      >
+                        <option data-name="Adelaide Nichols" data-image="img/avatars/13.png" selected>
+                          Adelaide Nichols
+                        </option>
+                        <option data-name="Julian Murphy" data-image="img/avatars/9.png">Julian Murphy</option>
+                        <option data-name="Sophie Gilbert" data-image="img/avatars/10.png">Sophie Gilbert</option>
+                        <option data-name="Marvin Wheeler" data-image="img/avatars/7.png">Marvin Wheeler</option>
+                      </select>
+                    </div>
+                    <h4 class="mb-4 pb-2">8 Members</h4>
+                    <ul class="p-0 m-0">
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/1.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Lester Palmer</p>
+                            <p class="mb-0 text-muted">pe@vogeiz.net</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Edit</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
                           </div>
                         </div>
-                      </div>
-                      <div class="table-responsive">
-                        <table class="table table-borderless border-top">
-                          <thead class="border-bottom">
-                            <tr>
-                              <th>OFFICE</th>
-                              <th>DATE</th>
-                              <th>STATUS</th>
-                              <th>PENDING DOCUMENTS</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">IT Department</p>
-                                    <small class="text-muted">Mr. Pande Coco</small>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">1 hour</p>
-                                    <small class="text-muted text-nowrap">41 mins</small>
-                                </div>
-                              </td>
-                              <td>
-                                <p class="mb-0 fw-semibold">5</p>
-                              </td>
-                              <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">Human Resources</p>
-                                    <small class="text-muted">Mrs. Spanish Bread</small>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">2 hours</p>
-                                    <small class="text-muted text-nowrap">42 mins</small>
-                                </div>
-                              </td>
-                              <td>
-                                <p class="mb-0 fw-semibold">4</p>
-                              </td>
-                              <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">Admin</p>
-                                    <small class="text-muted">Mr. Argentina Corned Beef</small>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">3 hours</p>
-                                    <small class="text-muted text-nowrap">2 mins</small>
-                                </div>
-                              </td>
-                              <td>
-                                <p class="mb-0 fw-semibold">11</p>
-                              </td>
-                              <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">Sales</p>
-                                    <small class="text-muted">Ms. Diwata Pares Overload</small>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">1 hours</p>
-                                    <small class="text-muted text-nowrap">32 mins</small>
-                                </div>
-                              </td>
-                              <td>
-                                <p class="mb-0 fw-semibold">0</p>
-                              </td>
-                              <td><span class="badge bg-label-success">Completed</span></td>
-
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="d-flex flex-column">
-                                    <p class="mb-0 fw-semibold">Marketing</p>
-                                    <small class="text-muted">Mrs. Champoradong Malabnaw</small>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="d-flex flex-column">
-                                  <p class="mb-0 fw-semibold">2 hours</p>
-                                  <small class="text-muted text-nowrap">29 mins</small>
-
-                                </div>
-                              </td>
-                              <td>
-                                <p class="mb-0 fw-semibold">6</p>
-                              </td>
-                              <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                </div>
-                <!--/ Last Transaction -->
-                
-                <!-- Activity Timeline -->
-                <div class="col-lg-6 col-md-12 mb-4">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                    <h5 class="card-title m-0 me-2 pt-1 mb-2">Latest Documents</h5>
-                    <div class="dropdown">
-                        <button
-                        class="btn p-0"
-                        type="button"
-                        id="timelineWapper"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        >
-                        <i class="ti ti-dots-vertical ti-sm text-muted"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="timelineWapper">
-                        <a class="dropdown-item" href="javascript:void(0);">Generate Report</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/2.png" alt="avatar" class="rounded-circle" />
                         </div>
-                    </div>
-                    </div>
-                    <div class="card-body pb-0">
-                    <ul class="timeline ms-1 mb-0">
-                        <li class="timeline-item timeline-item-transparent ps-4">
-                        <span class="timeline-point timeline-point-primary"></span>
-                        <div class="timeline-event">
-                            <div class="timeline-header">
-                            <h6 class="mb-0">Project Proposal</h6>
-                            <small class="text-muted">Today</small>
-                            </div>
-                            <div class="d-flex flex-wrap">
-                            <div class="ms-1">
-                                <h6 class="mb-0">Mr. Lester McCarthy</h6>
-                                <span>Junior Software Engineer</span>
-                            </div>
-                            </div>
-                            
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Mattie Blair</p>
+                            <p class="mb-0 text-muted">peromak@zukedohik.gov</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Owner</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
-                        </li>
-                        <li class="timeline-item timeline-item-transparent ps-4">
-                        <span class="timeline-point timeline-point-success"></span>
-                        <div class="timeline-event">
-                            <div class="timeline-header">
-                            <h6 class="mb-0">Intern Candidate List</h6>
-                            <small class="text-muted">2 Day Ago</small>
-                            </div>
-                            <div class="d-flex flex-wrap">
-                            <div class="ms-1">
-                                <h6 class="mb-0">Mr. Boom Panes</h6>
-                                <span>HR Officer</span>
-                            </div>
-                            </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/3.png" alt="avatar" class="rounded-circle" />
                         </div>
-                        </li>
-                        <li class="timeline-item timeline-item-transparent ps-4">
-                        <span class="timeline-point timeline-point-danger"></span>
-                        <div class="timeline-event">
-                            <div class="timeline-header">
-                            <h6 class="mb-0">Non-Disclosure Agreement</h6>
-                            <small class="text-muted">6 Day Ago</small>
-                            </div>
-                            <div class="d-flex flex-wrap">
-                            <div class="ms-1">
-                                <h6 class="mb-0">Ms. Chess Master</h6>
-                                <span>Secretary</span>
-                            </div>
-                            </div>
-                        </li>
-                        <li class="timeline-item timeline-item-transparent ps-4 border-0">
-                        <span class="timeline-point timeline-point-info"></span>
-                        <div class="timeline-event pb-0">
-                            <div class="timeline-header">
-                            <h6 class="mb-0">System Specification and Requirement</h6>
-                            <small class="text-muted">10 Day Ago</small>
-                            </div>
-                            <div class="d-flex flex-wrap">
-                            <div class="ms-1">
-                                <h6 class="mb-0">Ms. Mustard N. Ketsup</h6>
-                                <span>Software Development Intern</span>
-                            </div>
-                            </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Marvin Wheeler</p>
+                            <p class="mb-0 text-muted">rumet@jujpejah.net</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Edit</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
-                        </li>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/4.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Nannie Ford</p>
+                            <p class="mb-0 text-muted">negza@nuv.io</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Comment</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/5.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Julian Murphy</p>
+                            <p class="mb-0 text-muted">lunebame@umdomgu.net</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can View</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/6.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Sophie Gilbert</p>
+                            <p class="mb-0 text-muted">ha@sugit.gov</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can View</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/7.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Chris Watkins</p>
+                            <p class="mb-0 text-muted">zokap@mak.org</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Comment</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/8.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Adelaide Nichols</p>
+                            <p class="mb-0 text-muted">ujinomu@jigo.com</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Edit</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
                     </ul>
+                    <div class="d-flex align-items-start mt-4 align-items-sm-center">
+                      <i class="ti ti-users me-2"></i>
+                      <div class="d-flex justify-content-between flex-grow-1 align-items-center flex-wrap gap-2">
+                        <button class="btn btn-primary">Add Members</button>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
+              <!--/ Share Project Modal -->
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column"
+                >
+                  <div>
+                    ©
+                    <script>
+                      document.write(new Date().getFullYear());
+                    </script>
+                    , made with ❤️ by <a href="https://pixinvent.com" target="_blank" class="fw-semibold">Pixinvent</a>
+                  </div>
+                  <div>
+                    <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank"
+                      >License</a
+                    >
+                    <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4"
+                      >More Themes</a
+                    >
+
+                    <a
+                      href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Documentation</a
+                    >
+
+                    <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block"
+                      >Support</a
+                    >
+                  </div>
                 </div>
-                <!--/ Activity Timeline -->
               </div>
             </footer>
             <!-- / Footer -->
@@ -897,24 +985,12 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
-    <script src="../../assets/vendor/libs/swiper/swiper.js"></script>
-
-    <script src="../../assets/vendor/libs/datatables/jquery.dataTables.js"></script>
-    <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-    <script src="../../assets/vendor/libs/datatables-responsive/datatables.responsive.js"></script>
-    <script src="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js"></script>
-    <script src="../../assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons/datatables-buttons.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.js"></script>
-    <script src="../../assets/vendor/libs/jszip/jszip.js"></script>
-    <script src="../../assets/vendor/libs/pdfmake/pdfmake.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons/buttons.html5.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons/buttons.print.js"></script>
-    <!-- Flat Picker -->
+    <script src="../../assets/vendor/libs/select2/select2.js"></script>
+    <script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
     <script src="../../assets/vendor/libs/moment/moment.js"></script>
     <script src="../../assets/vendor/libs/flatpickr/flatpickr.js"></script>
-    <!-- Form Validation -->
+    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="../../assets/vendor/libs/tagify/tagify.js"></script>
     <script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
     <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
     <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
@@ -923,7 +999,7 @@
     <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="../../assets/js/cards-advance.js"></script>
-    <script src="../../assets/js/tables-datatables-basic.js"></script>
+    <script src="../../assets/js/form-validation.js"></script>
+    <script src="../../assets/js/modal-share-project.js"></script>
   </body>
 </html>
