@@ -52,7 +52,7 @@
     <link rel="stylesheet" href="../../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
 
     <!-- Page CSS -->
-
+    
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
 
@@ -529,14 +529,19 @@
                           />
                         </div>
                         <div class="col-md-6">
-                        <label class="form-label" for="formValidationName">Office</label>
-                        <input
-                            type="text"
-                            id="formValidationName"
-                            class="form-control"
-                            placeholder=""
-                            name="formValidationName"
-                        />
+                          <div class="mb-3">
+                            <label for="defaultSelect" class="form-label">Office</label>
+                            <select id="defaultSelect" class="form-select">
+                              <option>Office</option>
+                              <option value="1">Admin</option>
+                              <option value="2">IT</option>
+                              <option value="3">HR</option>
+                              <option value="4">Sales</option>
+                              <option value="5">Marketing</option>
+                              <option value="6">Finance</option>
+                              <option value="7">Legal</option>
+                            </select>
+                          </div>
                         </div>
                         <div class="col-md-6">
                         <label class="form-label" for="basic-default-dob">Date Filed</label>
