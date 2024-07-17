@@ -44,9 +44,10 @@
     <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
-
+    <link rel="stylesheet" href="../../assets/vendor/css/pages/cards-advance.css" />
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
 
@@ -494,110 +495,151 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin/</span> Document Progress</h4>
+              <div class="row">
+                <!-- Progress -->
+                  <div class="card" style="margin-bottom: 10px;">
 
-
-              <hr class="my-5" />
-
-
-              <!-- Responsive Table -->
-              <div class="card">
-                <h5 class="card-header">Document History</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table">
-                    <thead>
-                      <tr class="text-nowrap">
-                        <th>#</th>
-                        <th>Employee In-Charge</th>
-                        <th>Office</th>
-                        <th>Time Received</th>
-                        <th>Time Sent</th>
-                        <th>Duration in Office</th>
-                        <th>Status</th>
-                        <th>Remarks</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ms. Kay Efsee</td>
-                        <td>Human Resources</td>
-                        <td>11:00 AM</td>
-                        <td>1:02 PM</td>
-                        <td>3 hours and 2 mins</td>
-                        <td><span class="badge bg-label-success">Signed</span></td>
-                        <td>Filed and signed</td>
-                        <td>
-                            <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                  <i class="ti ti-dots-vertical"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="ti ti-pencil me-1"></i> Edit</a
-                                  >
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="ti ti-flag me-1"></i> Report</a
-                                  >
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Mrs. Jabee Lee</td>
-                        <td>Marketing</td>
-                        <td>2:10 PM</td>
-                        <td>3:06 PM</td>
-                        <td>0 hours and 56 mins</td>
-                        <td><span class="badge bg-label-success">Signed</span></td>
-                        <td>signed and edited</td>
-                        <td>
-                            <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                  <i class="ti ti-dots-vertical"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="ti ti-pencil me-1"></i> Edit</a
-                                  >
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="ti ti-flag me-1"></i> Report</a
-                                  >
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Mr. Trope Pikalhat</td>
-                        <td>Admin</td>
-                        <td>3:15 PM</td>
-                        <td>4:26 PM</td>
-                        <td>1 hours and 11 mins</td>
-                        <td><span class="badge bg-label-danger">Rejected</span></td>
-                        <td>sent back for further revision</td>
-                        <td>
-                            <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                  <i class="ti ti-dots-vertical"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="ti ti-pencil me-1"></i> Edit</a
-                                  >
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="ti ti-flag me-1"></i> Report</a
-                                  >
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                    <h5 class="card-header">Current Progress</h5>
+                    <div class="card-body" style="margin-bottom: 1rem;">
+                      <div class="progress-wrapper" style="margin-top: 2rem;margin-left: 2rem;margin-right: 2rem;">
+                        <h6>Progress: 85%</h6>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-success"
+                            role="progressbar"
+                            style="width: 85%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Progress -->
+                <!-- <hr class="my-5"> -->
+                <!-- Responsive Table -->
+                <div class="card">
+                  <h5 class="card-header">Document History</h5>
+                  
+                  
+                  <div class="table-responsive text-nowrap">
+                    <table class="table">
+                      <thead>
+                        <tr class="text-nowrap">
+                          <th>#</th>
+                          <th>Employee In-Charge</th>
+                          <th>Office</th>
+                          <th>Time Received</th>
+                          <th>Time Sent</th>
+                          <th>Duration in Office</th>
+                          <th>Status</th>
+                          <th>Access</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Ms. Kay Efsee</td>
+                          <td>Human Resources</td>
+                          <td>11:00 AM</td>
+                          <td>1:02 PM</td>
+                          <td>3 hours and 2 mins</td>
+                          <td><span class="badge bg-label-success">Signed</span></td>
+                          <td>Creator</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="ti ti-dots-vertical"></i>
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-pencil me-1"></i> Edit</a
+                                    >
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-flag me-1"></i> Report</a
+                                    >
+                                  </div>
+                              </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Mrs. Jabee Lee</td>
+                          <td>Marketing</td>
+                          <td>2:10 PM</td>
+                          <td>3:06 PM</td>
+                          <td>0 hours and 56 mins</td>
+                          <td><span class="badge bg-label-success">Signed</span></td>
+                          <td>Editor and Signatory</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="ti ti-dots-vertical"></i>
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-pencil me-1"></i> Edit</a
+                                    >
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-flag me-1"></i> Report</a
+                                    >
+                                  </div>
+                              </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Mr. Trope Pikalhat</td>
+                          <td>Admin</td>
+                          <td>3:15 PM</td>
+                          <td>4:26 PM</td>
+                          <td>1 hours and 11 mins</td>
+                          <td><span class="badge bg-label-danger">Rejected</span></td>
+                          <td>Signatory</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="ti ti-dots-vertical"></i>
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-pencil me-1"></i> Edit</a
+                                    >
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-flag me-1"></i> Report</a
+                                    >
+                                  </div>
+                              </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+                  </div>
+                </div>
+                <!--/ Responsive Table -->
+                <hr class="my-5">
+                              <!-- Donut Chart -->
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <div>
+                      <h5 class="card-title mb-0">Ratio of Time Per Employee</h5>
+                    </div>
+                    </div>
+                    <div id="donutChartEmp"></div>
+                  </div>
+                  <div class="card">
+                    
+                  </div>
                 </div>
               </div>
-              <!--/ Responsive Table -->
+              <!-- /Donut Chart -->
+              
+                
             </div>
             <!-- / Content -->
 
@@ -669,10 +711,12 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-
+    <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/cards-advance.js"></script>
 
     <!-- Page JS -->
+    <script src="../../assets/js/charts-apex.js"></script>
   </body>
 </html>

@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="../../assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
   <link rel="stylesheet" href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
   <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css" />
-
+  <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
   <!-- Page CSS -->
   <link rel="stylesheet" href="../../assets/vendor/css/pages/cards-advance.css" />
   <!-- Helpers -->
@@ -451,17 +451,17 @@
           <div class="container-xxl flex-grow-1 container-p-y">
 
             <div class="row">
-              <!-- Responsive Table -->
+            <!-- Progress -->
               <div class="card">
 
                 <div class="row">
                   <div class="col-9">
-                    <h5 class="card-header">All Documents
+                    <h5 class="card-header">Summary of Document Progress
                   </div>
                   <div class="col-2">
                     <a href="add_document.html" class='btn btn-primary' tableindex='0' aria-controls="DataTables Table 0"
                       type='button' style="background-color: #bae1ff !important; color: black !important; margin-top: 1.5rem;">
-                      <h6 class="mb-0 fw-semibold">Add Document</h6>
+                      <h6 class="mb-0 fw-semibold">All Documents</h6>
                     </a>
                   <!-- </div> -->
                 </div>
@@ -472,98 +472,353 @@
                 <table class="table">
                   <thead>
                     <tr class="text-nowrap">
-                      <th>#</th>
                       <th>Employee</th>
                       <th>Document</th>
-                      <th>Office</th>
-                      <th>Duration in Office</th>
-                      <th>Status</th>
+                      <th>Current Office</th>
+                      <th style="width: 550px;">Duration in Office</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Ms. Chess Master</td>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Human Resources</small>
+                        </div>
+                      </div></th>
                       <td>Non-Disclosure Agreement (NDA)</td>
-                      <td>Admin</td>
-                      <td>2 hours and 48 mins</td>
-                      <td><span class="badge bg-label-success">Completed</span></td>
+                      <td>Administration</td>
                       <td>
-                        <a class="dropdown-item" href="admin_office.html"><i
-                            class="ti ti-file-arrow-right me-1"></i>Document History</a>
+                        <div class="progress-wrapper" style="position: relative;">
+                          <span class="text-muted" style="font-size:small">Progress: 97%</span>
+                          <div class="progress w-100 me-3" style="height: 8px">
+                            <div
+                              class="progress-bar bg-success"
+                              role="progressbar"
+                              style="width: 97%"
+                              aria-valuenow="54"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                          </div>
+                        </div>
+                    </td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">2</th>
-                      <td>Mr. Lester McCarthy</td>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Human Resources</small>
+                        </div>
+                      </div></th>
                       <td>Project Proposal</td>
                       <td>IT Department</td>
-                      <td>2 hours and 3 mins</td>
-                      <td><span class="badge bg-label-success">Completed</span></td>
                       <td>
-                        <a class="dropdown-item" href="admin_office.html"><i
-                            class="ti ti-file-arrow-right me-1"></i>Document History</a>
+                        <div class="progress-wrapper" style="position: relative;">
+                          <span class="text-muted" style="font-size:small">Progress: 97%</span>
+                          <div class="progress w-100 me-3" style="height: 8px">
+                            <div
+                              class="progress-bar bg-success"
+                              role="progressbar"
+                              style="width: 97%"
+                              aria-valuenow="54"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                          </div>
+                        </div>
+                    </td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">3</th>
-                      <td>Mr. Boom Panes</td>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Human Resources</small>
+                        </div>
+                      </div></th>
                       <td>Intern Candidate List</td>
                       <td>Human Resources</td>
-                      <td>2 hours and 39 mins</td>
-                      <td><span class="badge bg-label-success">Completed</span></td>
+                      <td><div class="progress-wrapper" style="position: relative;">
+                        <span class="text-muted" style="font-size:small">Progress: 97%</span>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-success"
+                            role="progressbar"
+                            style="width: 97%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div></td>
                       <td>
-                        <a class="dropdown-item" href="admin_office.html"><i
-                            class="ti ti-file-arrow-right me-1"></i>Document History</a>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">4</th>
-                      <td>Mr. Data Analyst</td>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Human Resources</small>
+                        </div>
+                      </div></th>
                       <td>Market Analysis Report</td>
-                      <td>Finance</td>
-                      <td>3 hours and 12 mins</td>
-                      <td><span class="badge bg-label-danger">Rejected</span></td>
+                      <td>Accounting</td>
+                      <td><div class="progress-wrapper" style="position: relative;">
+                        <span class="text-muted" style="font-size:small">Progress: 97%</span>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-success"
+                            role="progressbar"
+                            style="width: 97%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div></td>
                       <td>
-                        <a class="dropdown-item" href="admin_office.html"><i
-                            class="ti ti-file-arrow-right me-1"></i>Document History</a>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">5</th>
-                      <td>Ms. Legal Eagle</td>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Human Resources</small>
+                        </div>
+                      </div></th>
                       <td>Client Contract</td>
-                      <td>Legal</td>
-                      <td>Still in Office</td>
-                      <td><span class="badge bg-label-warning">Pending</span></td>
+                      <td>Sales</td>
+                      <td><div class="progress-wrapper" style="position: relative;">
+                        <span class="text-muted" style="font-size:small">Progress: 97%</span>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-success"
+                            role="progressbar"
+                            style="width: 97%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div></td>
                       <td>
-                        <a class="dropdown-item" href="admin_office.html"><i
-                            class="ti ti-file-arrow-right me-1"></i>Document History</a>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">6</th>
-                      <td>Dr. Research Guru</td>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Human Resources</small>
+                        </div>
+                      </div></th>
                       <td>Feasibility Study</td>
-                      <td>Research</td>
-                      <td>4 hours and 45 mins</td>
-                      <td><span class="badge bg-label-success">Completed</span></td>
+                      <td>Marketing</td>
+                      <td><div class="progress-wrapper" style="position: relative;">
+                        <span class="text-muted" style="font-size:small">Progress: 97%</span>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-success"
+                            role="progressbar"
+                            style="width: 97%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div></td>
                       <td>
-                        <a class="dropdown-item" href="admin_office.html"><i
-                            class="ti ti-file-arrow-right me-1"></i>Document History</a>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">7</th>
-                      <td>Mr. IT Specialist</td>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Human Resources</small>
+                        </div>
+                      </div></th>
                       <td>System Upgrade Plan</td>
-                      <td>IT</td>
-                      <td>5 hours and 20 mins</td>
-                      <td><span class="badge bg-label-danger">Rejected </span></td>
+                      <td>IT Department</td>
+                      <td><div class="progress-wrapper" style="position: relative;">
+                        <span class="text-muted" style="font-size:small">Progress: 97%</span>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-success"
+                            role="progressbar"
+                            style="width: 97%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div></td>
                       <td>
-                        <a class="dropdown-item" href="admin_office.html"><i
-                            class="ti ti-file-arrow-right me-1"></i>Document History</a>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                          
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
 
@@ -574,11 +829,9 @@
 
 
             </div>
-            <!--/ Responsive Table -->
+            <!--/ Progress -->
             <hr class="my-5">
-
-
-            <!-- Last Transaction -->
+            <!-- Summary -->
             <div class="col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-header d-flex justify-content-between">
@@ -599,9 +852,9 @@
                     <thead class="border-bottom">
                       <tr>
                         <th>OFFICE</th>
-                        <th>DATE</th>
-                        <th>STATUS</th>
-                        <th>PENDING DOCUMENTS</th>
+                        <th>Average</th>
+                        <th>Pending</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -623,7 +876,7 @@
                         <td>
                           <p class="mb-0 fw-semibold">5</p>
                         </td>
-                        <td><span class="badge bg-label-secondary">Incomplete</span></td>
+                        <td><a class="button" href="add_document.html">Team Dashboard</a></td>
 
                       </tr>
                       <tr>
@@ -643,6 +896,27 @@
                         </td>
                         <td>
                           <p class="mb-0 fw-semibold">4</p>
+                        </td>
+                        <td><span class="badge bg-label-secondary">Incomplete</span></td>
+
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex justify-content-start align-items-center">
+                            <div class="d-flex flex-column">
+                              <p class="mb-0 fw-semibold">Accounting</p>
+                              <small class="text-muted">Mrs. Lily Gaya</small>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="d-flex flex-column">
+                            <p class="mb-0 fw-semibold">1 hours</p>
+                            <small class="text-muted text-nowrap">17 mins</small>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="mb-0 fw-semibold">2</p>
                         </td>
                         <td><span class="badge bg-label-secondary">Incomplete</span></td>
 
@@ -716,9 +990,63 @@
                 </div>
               </div>
             </div>
-            <!--/ Last Transaction -->
+            <!--/ Summary -->
+              <!-- Donut Chart -->
+              <div class="col-md-6 col-12 mb-4">
+                <div class="card">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <div>
+                      <h5 class="card-title mb-0">Expense Ratio</h5>
+                      <small class="text-muted">Spending on various categories</small>
+                    </div>
+                    <div class="dropdown d-none d-sm-flex">
+                      <button
+                        type="button"
+                        class="btn dropdown-toggle px-0"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="ti ti-calendar"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Today</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Yesterday</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"
+                            >Last 7 Days</a
+                          >
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"
+                            >Last 30 Days</a
+                          >
+                        </li>
+                        <li>
+                          <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"
+                            >Current Month</a
+                          >
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Last Month</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div id="donutChart"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Donut Chart -->
 
-            <!-- Activity Timeline -->
+            <!-- Latest Document -->
             <div class="col-lg-6 col-md-12 mb-4">
               <div class="card">
                 <div class="card-header d-flex justify-content-between">
@@ -800,7 +1128,91 @@
                 </div>
               </div>
             </div>
-            <!--/ Activity Timeline -->
+            <!--/ Latest Document-->
+
+            <!-- Urgent Document -->
+            <div class="col-lg-6 col-md-12 mb-4">
+              <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                  <h5 class="card-title m-0 me-2 pt-1 mb-2">Latest Documents</h5>
+                  <div class="dropdown">
+                    <button class="btn p-0" type="button" id="timelineWapper" data-bs-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="timelineWapper">
+                      <a class="dropdown-item" href="javascript:void(0);">Generate Report</a>
+                      <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body pb-0">
+                  <ul class="timeline ms-1 mb-0">
+                    <li class="timeline-item timeline-item-transparent ps-4">
+                      <span class="timeline-point timeline-point-danger"></span>
+                      <div class="timeline-event">
+                        <div class="timeline-header">
+                          <h6 class="mb-0">Project Proposal</h6>
+                          <small class="text-muted">Today</small>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                          <div class="ms-1">
+                            <h6 class="mb-0">Mr. Lester McCarthy</h6>
+                            <span>Junior Software Engineer</span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </li>
+                    <li class="timeline-item timeline-item-transparent ps-4">
+                      <span class="timeline-point timeline-point-danger"></span>
+                      <div class="timeline-event">
+                        <div class="timeline-header">
+                          <h6 class="mb-0">Intern Candidate List</h6>
+                          <small class="text-muted">2 Day Ago</small>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                          <div class="ms-1">
+                            <h6 class="mb-0">Mr. Boom Panes</h6>
+                            <span>HR Officer</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-item timeline-item-transparent ps-4">
+                      <span class="timeline-point timeline-point-danger"></span>
+                      <div class="timeline-event">
+                        <div class="timeline-header">
+                          <h6 class="mb-0">Non-Disclosure Agreement</h6>
+                          <small class="text-muted">6 Day Ago</small>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                          <div class="ms-1">
+                            <h6 class="mb-0">Ms. Chess Master</h6>
+                            <span>Secretary</span>
+                          </div>
+                        </div>
+                    </li>
+                    <li class="timeline-item timeline-item-transparent ps-4 border-0">
+                      <span class="timeline-point timeline-point-danger"></span>
+                      <div class="timeline-event pb-0">
+                        <div class="timeline-header">
+                          <h6 class="mb-0">System Specification and Requirement</h6>
+                          <small class="text-muted">10 Day Ago</small>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                          <div class="ms-1">
+                            <h6 class="mb-0">Ms. Mustard N. Ketsup</h6>
+                            <span>Software Development Intern</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--/ Urgent Document -->
           </div>
           </footer>
           <!-- / Footer -->
@@ -839,6 +1251,8 @@
   <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
   <script src="../../assets/vendor/libs/swiper/swiper.js"></script>
 
+  <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
   <script src="../../assets/vendor/libs/datatables/jquery.dataTables.js"></script>
   <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
   <script src="../../assets/vendor/libs/datatables-responsive/datatables.responsive.js"></script>
@@ -864,6 +1278,7 @@
   <!-- Page JS -->
   <script src="../../assets/js/cards-advance.js"></script>
   <script src="../../assets/js/tables-datatables-basic.js"></script>
+  <script src="../../assets/js/charts-apex.js"></script>
 </body>
 
 </html>
