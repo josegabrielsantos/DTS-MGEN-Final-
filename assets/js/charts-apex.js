@@ -48,7 +48,7 @@
     let i = 0;
     let series = [];
     while (i < count) {
-      let x = 'w' + (i + 1).toString();
+      let x = (i + 9) + ':30'.toString();
       let y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
 
       series.push({
@@ -690,39 +690,27 @@
             ranges: [
               {
                 from: 0,
-                to: 10,
-                name: '0-10',
+                to: 1,
+                name: '0-1',
                 color: '#90B3F3'
               },
               {
-                from: 11,
-                to: 20,
-                name: '10-20',
+                from: 2,
+                to: 3,
+                name: '2-3',
                 color: '#7EA6F1'
               },
               {
-                from: 21,
-                to: 30,
-                name: '20-30',
+                from: 4,
+                to: 6,
+                name: '4-6',
                 color: '#6B9AEF'
               },
               {
-                from: 31,
-                to: 40,
-                name: '30-40',
+                from: 7,
+                to: 10,
+                name: '7-10',
                 color: '#598DEE'
-              },
-              {
-                from: 41,
-                to: 50,
-                name: '40-50',
-                color: '#4680EC'
-              },
-              {
-                from: 51,
-                to: 60,
-                name: '50-60',
-                color: '#3474EA'
               }
             ]
           }
@@ -759,52 +747,38 @@
       },
       series: [
         {
-          name: 'SUN',
-          data: generateDataHeat(24, {
-            min: 0,
-            max: 60
-          })
-        },
-        {
           name: 'MON',
-          data: generateDataHeat(24, {
+          data: generateDataHeat(10, {
             min: 0,
-            max: 60
+            max: 10
           })
         },
         {
           name: 'TUE',
-          data: generateDataHeat(24, {
+          data: generateDataHeat(10, {
             min: 0,
-            max: 60
+            max: 10
           })
         },
         {
           name: 'WED',
-          data: generateDataHeat(24, {
+          data: generateDataHeat(10, {
             min: 0,
-            max: 60
+            max: 10
           })
         },
         {
           name: 'THU',
-          data: generateDataHeat(24, {
+          data: generateDataHeat(10, {
             min: 0,
-            max: 60
+            max: 10
           })
         },
         {
           name: 'FRI',
-          data: generateDataHeat(24, {
+          data: generateDataHeat(10, {
             min: 0,
-            max: 60
-          })
-        },
-        {
-          name: 'SAT',
-          data: generateDataHeat(24, {
-            min: 0,
-            max: 60
+            max: 10
           })
         }
       ],
