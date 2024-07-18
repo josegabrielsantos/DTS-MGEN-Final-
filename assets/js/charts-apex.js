@@ -1025,9 +1025,9 @@
                 show: true,
                 fontSize: '1.5rem',
                 color: headingColor,
-                label: 'Operational',
+                label: 'Average',
                 formatter: function (w) {
-                  return '32%';
+                  return 'Time';
                 }
               }
             }
