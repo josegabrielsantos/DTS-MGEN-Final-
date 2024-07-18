@@ -33,8 +33,10 @@
       series2: '#3fd0bd',
       series3: '#826bf8',
       series4: '#2b9bf4',
-      series5: '#ff6f61', // New color
-      series6: '#8dd7cf'  
+      series5: '#ff6f61', // Existing new color
+      series6: '#8dd7cf', // Existing new color
+      series7: '#f45b69', // New color
+      series8: '#54b399'  // New color
     },
     area: {
       series1: '#29dac7',
@@ -1110,8 +1112,8 @@
     donutChart.render();
   }
 
-  const donutChartEmp = document.querySelector('#donutChartEmp'),
-  donutChartConfigEmp = {
+  const donutChartDocu = document.querySelector('#donutChartDocu'),
+  donutChartConfigDocu = {
     chart: {
       height: 390,
       type: 'donut'
@@ -1122,6 +1124,156 @@
       chartColors.donut.series3,
       chartColors.donut.series5,
       chartColors.donut.series1,
+    ],
+    stroke: {
+      show: false,
+      curve: 'straight'
+    },
+    dataLabels: {
+      enabled: true,
+      formatter: function (val, opt) {
+        return parseInt(val, 10) + '%';
+      }
+    },
+    legend: {
+      show: true,
+      position: 'bottom',
+      markers: { offsetX: -3 },
+      itemMargin: {
+        vertical: 3,
+        horizontal: 10
+      },
+      labels: {
+        colors: legendColor,
+        useSeriesColors: false
+      }
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          labels: {
+            show: true,
+            name: {
+              fontSize: '2rem',
+              fontFamily: 'Open Sans'
+            },
+            value: {
+              fontSize: '1.2rem',
+              color: legendColor,
+              fontFamily: 'Open Sans',
+              formatter: function (val) {
+                return parseInt(val, 10) + '%';
+              }
+            },
+            total: {
+              show: true,
+              fontSize: '1.5rem',
+              color: headingColor,
+              label: 'Employee Time',
+              formatter: function (w) {
+                return '85%';
+              }
+            }
+          }
+        }
+      }
+    },
+    responsive: [
+      {
+        breakpoint: 992,
+        options: {
+          chart: {
+            height: 380
+          },
+          legend: {
+            position: 'bottom',
+            labels: {
+              colors: legendColor,
+              useSeriesColors: false
+            }
+          }
+        }
+      },
+      {
+        breakpoint: 576,
+        options: {
+          chart: {
+            height: 320
+          },
+          plotOptions: {
+            pie: {
+              donut: {
+                labels: {
+                  show: true,
+                  name: {
+                    fontSize: '1.5rem'
+                  },
+                  value: {
+                    fontSize: '1rem'
+                  },
+                  total: {
+                    fontSize: '1.5rem'
+                  }
+                }
+              }
+            }
+          },
+          legend: {
+            position: 'bottom',
+            labels: {
+              colors: legendColor,
+              useSeriesColors: false
+            }
+          }
+        }
+      },
+      {
+        breakpoint: 420,
+        options: {
+          chart: {
+            height: 280
+          },
+          legend: {
+            show: false
+          }
+        }
+      },
+      {
+        breakpoint: 360,
+        options: {
+          chart: {
+            height: 250
+          },
+          legend: {
+            show: false
+          }
+        }
+      }
+    ]
+  };
+  if (typeof donutChartDocu !== undefined && donutChartDocu !== null) {
+    const donutChart = new ApexCharts(donutChartDocu, donutChartConfigDocu);
+    donutChart.render();
+  }
+
+  const donutChartEmp = document.querySelector('#donutChartEmp'),
+  donutChartConfigEmp = {
+    chart: {
+      height: 390,
+      type: 'donut'
+    },
+    labels: ['Jabee Lee', 'Kay Efsee', 'Trope Pikalhat','Bans Evansot', 'Jack N. Jill','Ferdie Love','Hotel California', 'Sa Bong'],
+    series: [10, 24, 17, 15, 11, 3, 7, 13],
+    colors: [
+      chartColors.donut.series1,
+      chartColors.donut.series5,
+      chartColors.donut.series2,
+      chartColors.donut.series3,
+      chartColors.donut.series4,
+      chartColors.donut.series6,
+      chartColors.donut.series7,
+      chartColors.donut.series8,
+
     ],
     stroke: {
       show: false,

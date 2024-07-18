@@ -448,56 +448,32 @@
         <div class="content-wrapper">
           <!-- Content -->
 
-          <div class="container-xxl flex-grow-1 container-p-y">
+          <!-- <div class="container-xxl flex-grow-1 container-p-y"> -->
 
-            <div class="row">
+            <div class="col">
             <!-- Progress -->
               <div class="card">
 
                 <div class="row">
                   <div class="col-9">
-                    <h5 class="card-header">Summary of Document Progress
-                  </div>
-                  <div class="col-2">
-                    <a href="add_document.html" class='btn btn-primary' tableindex='0' aria-controls="DataTables Table 0"
-                      type='button' style="background-color: #bae1ff !important; color: black !important; margin-top: 1.5rem;">
-                      <h6 class="mb-0 fw-semibold">All Documents</h6>
-                    </a>
-                  <!-- </div> -->
-                </div>
-              </div>
+                    
+              <!-- </div> -->
               </h5>
-
+              <div class = 'card-body'>
                 <!-- Heat map Chart -->
                 <div class="col-12">
                     <div class="card">
                       <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="card-title mb-0">Daily Sales States</h5>
-                        <div class="dropdown">
-                          <button
-                            class="btn p-0"
-                            type="button"
-                            id="heatChartDd"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <i class="ti ti-dots-vertical"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="heatChartDd">
-                            <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                          </div>
-                        </div>
+                        <h5 class="card-title mb-0">Employee Activity During Workhours</h5>
                       </div>
                       <div class="card-body">
                         <div id="heatMapChart"></div>
                       </div>
                     </div>
                   </div>
+                </div>
                   <!-- /Heat map Chart -->
-
+                
 
             </div>
             <!--/ Progress -->
@@ -530,39 +506,54 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold">IT Department</p>
-                              <small class="text-muted">Mr. Pande Coco</small>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td>
+                          </td>
+                          <td>
+                          
                           <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">1 hour</p>
+                            <p class="mb-0 fw-semibold">0 hour</p>
                             <small class="text-muted text-nowrap">41 mins</small>
                           </div>
                         </td>
                         <td>
-                          <p class="mb-0 fw-semibold">5</p>
+                          <p class="mb-0 fw-semibold">2</p>
                         </td>
                         <td><a class="button" href="add_document.html">Team Dashboard</a></td>
 
                       </tr>
                       <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold">Human Resources</p>
-                              <small class="text-muted">Mrs. Spanish Bread</small>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
                             </div>
-                          </div>
-                        </td>
+                          </td>
                         <td>
                           <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">2 hours</p>
-                            <small class="text-muted text-nowrap">42 mins</small>
+                            <p class="mb-0 fw-semibold">1 hours</p>
+                            <small class="text-muted text-nowrap">36 mins</small>
                           </div>
                         </td>
                         <td>
@@ -572,60 +563,81 @@
 
                       </tr>
                       <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold">Accounting</p>
-                              <small class="text-muted">Mrs. Lily Gaya</small>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
                             </div>
-                          </div>
-                        </td>
+                          </td>
                         <td>
                           <div class="d-flex flex-column">
                             <p class="mb-0 fw-semibold">1 hours</p>
-                            <small class="text-muted text-nowrap">17 mins</small>
+                            <small class="text-muted text-nowrap">7 mins</small>
                           </div>
                         </td>
                         <td>
-                          <p class="mb-0 fw-semibold">2</p>
+                          <p class="mb-0 fw-semibold">7</p>
                         </td>
                         <td><span class="badge bg-label-secondary">Incomplete</span></td>
 
                       </tr>
                       <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold">Admin</p>
-                              <small class="text-muted">Mr. Argentina Corned Beef</small>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
                             </div>
-                          </div>
-                        </td>
+                          </td>
                         <td>
                           <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">3 hours</p>
+                            <p class="mb-0 fw-semibold">1 hours</p>
                             <small class="text-muted text-nowrap">2 mins</small>
                           </div>
                         </td>
                         <td>
-                          <p class="mb-0 fw-semibold">11</p>
+                          <p class="mb-0 fw-semibold">1</p>
                         </td>
                         <td><span class="badge bg-label-secondary">Incomplete</span></td>
 
                       </tr>
                       <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold">Sales</p>
-                              <small class="text-muted">Ms. Diwata Pares Overload</small>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td>
+                          </td>
+                          <td>
                           <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">1 hours</p>
-                            <small class="text-muted text-nowrap">32 mins</small>
+                            <p class="mb-0 fw-semibold">0 hours</p>
+                            <small class="text-muted text-nowrap">43 mins</small>
                           </div>
                         </td>
                         <td>
@@ -635,25 +647,88 @@
 
                       </tr>
                       <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold">Marketing</p>
-                              <small class="text-muted">Mrs. Champoradong Malabnaw</small>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
                             </div>
-                          </div>
                         </td>
                         <td>
                           <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">2 hours</p>
-                            <small class="text-muted text-nowrap">29 mins</small>
+                            <p class="mb-0 fw-semibold">1 hours</p>
+                            <small class="text-muted text-nowrap">11 mins</small>
 
                           </div>
                         </td>
                         <td>
-                          <p class="mb-0 fw-semibold">6</p>
+                          <p class="mb-0 fw-semibold">2</p>
                         </td>
                         <td><span class="badge bg-label-secondary">Incomplete</span></td>
+
+                      </tr>
+                      <tr>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                          <div class="d-flex flex-column">
+                            <p class="mb-0 fw-semibold">0 hours</p>
+                            <small class="text-muted text-nowrap">29 mins</small>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="mb-0 fw-semibold">0</p>
+                        </td>
+                        <td><span class="badge bg-label-success">Completed</span></td>
+
+                      </tr>
+                      <tr>
+                        <td scope="col-2">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../../assets/img/avatars/3.png"
+                                alt="Avatar"
+                                class="rounded-circle"
+                                width="45"
+                                style="margin-right: 8px;"
+                              />
+                              <div>
+                                <h6 class="mb-0">Bans Evansot</h6>
+                                <small class="text-muted">Human Resources</small>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                          <div class="d-flex flex-column">
+                            <p class="mb-0 fw-semibold">0 hours</p>
+                            <small class="text-muted text-nowrap">52 mins</small>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="mb-0 fw-semibold">1</p>
+                        </td>
+                        <td><span class="badge bg-label-success">Completed</span></td>
 
                       </tr>
                     </tbody>
@@ -711,7 +786,7 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <div id="donutChart"></div>
+                    <div id="donutChartEmp"></div>
                   </div>
                 </div>
               </div>

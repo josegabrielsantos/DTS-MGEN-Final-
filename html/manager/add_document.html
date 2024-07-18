@@ -44,16 +44,15 @@
     <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/swiper/swiper.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/tagify/tagify.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/css/pages/cards-advance.css" />
+    
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
 
@@ -67,8 +66,8 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
-        
-        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme", style="background-color: #bae1ff !important;">
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" , style="background-color: #bae1ff !important;">
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
               <span class="app-brand-logo demo">
@@ -101,7 +100,7 @@
                   />
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold">DTS</span>
+              <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -115,11 +114,12 @@
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link">
+              <a href="dashboard.html" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                 <div data-i18n="Dashboard">Dashboard</div>
               </a>
             </li>
+
 
           </ul>
         </aside>
@@ -153,20 +153,13 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
 
-                <!-- Style Switcher -->
-                <li class="nav-item me-2 me-xl-0">
-                  <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
-                    <i class="ti ti-md"></i>
-                  </a>
-                </li>
-                <!--/ Style Switcher -->
-
                 <!-- Notification -->
                 <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
                   <a
                     class="nav-link dropdown-toggle hide-arrow"
                     href="javascript:void(0);"
                     data-bs-toggle="dropdown"
+                    
                     data-bs-auto-close="outside"
                     aria-expanded="false"
                   >
@@ -511,207 +504,454 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">User /</span> Dashbooard</h4>
+              <div class="row mb-4">
 
-              <div class="col">
-                <!-- Revenue Report -->
-                <div class="col-md-12">
-                  <!-- Progress -->
-              <div class="card">
 
-                <div class="row">
-                  <div class="col-9">
-                    <h5 class="card-header">Summary of Document Progress
-                  </div>
-                  <div class="col-2">
-                    <a href="add_document.html" class='btn btn-primary' tableindex='0' aria-controls="DataTables Table 0"
-                      type='button' style="background-color: #bae1ff !important; color: black !important; margin-top: 1.5rem;">
-                      <h6 class="mb-0 fw-semibold">All Documents</h6>
-                    </a>
-                  <!-- </div> -->
+              </div>
+              <div class="row">
+                <!-- FormValidation -->
+                <div class="col-12">
+                  <div class="card">
+                    <h5 class="card-header">Fill Up Form</h5>
+                    <div class="card-body">
+                      <form id="formValidationExamples" class="row g-3">
+                        <!-- Account Details -->
+
+
+                        <div class="col-md-6">
+                          <label class="form-label" for="formValidationName">Employee Name</label>
+                          <input
+                            type="text"
+                            id="formValidationEmployee"
+                            class="form-control"
+                            placeholder="John Doe"
+                            name="formValidationName"
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="defaultSelect" class="form-label">Office</label>
+                            <select id="defaultSelect" class="form-select">
+                              <option>Office</option>
+                              <option value="1">Admin</option>
+                              <option value="2">IT</option>
+                              <option value="3">HR</option>
+                              <option value="4">Sales</option>
+                              <option value="5">Marketing</option>
+                              <option value="6">Finance</option>
+                              <option value="7">Legal</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                        <label class="form-label" for="basic-default-dob">Date Filed</label>
+                        <input
+                            type="text"
+                            class="form-control flatpickr-validation"
+                            id="basic-default-dob"
+                            required
+                        />
+                        </div>
+
+                        <div class="col-md-6">
+                        <label for="formValidationFile" class="form-label">Select Document</label>
+                        <input class="form-control" type="file" id="formValidationFile" name="formValidationFile" />
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                              <div class="card-body text-center">
+                                <i class="mb-3 ti ti-file-text ti-lg"></i>
+                                <h6>Add Required Signatures</h6>
+                                <button
+                                  type="button"
+                                  class="btn btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#shareProject"
+                                  style="background-color: #bae1ff; color: black !important;"
+                                >
+                                  Add
+                                </button>
+                              </div>
+                            </div>
+                        </div>  
+                        <div class="col-md-12">
+                            <label class="switch switch-primary">
+                              <input type="checkbox" class="switch-input" required />
+                              <span class="switch-toggle-slider">
+                                <span class="switch-on", style="background-color: #bae1ff !important;"></span>
+                                <span class="switch-off"></span>
+                              </span>
+                              <span class="switch-label">Mark as Urgent</span>
+                            </label>
+                          </div>
+                          
+                          </div>
+
+                        <div class="col-md-6">
+                          <a href="add_document.html" class='dt-button create-new btn btn-primary' tableindex='0' aria-controls="DataTables Table 0" type='button' style="background-color: #bae1ff !important; color: black !important; margin: 1.5rem">
+                            <h6 class="mb-0 fw-semibold">Submit</h6>
+                          </a>
+                        </div>
+                      </form>
+                    </div>
+                  
                 </div>
+                <!-- /FormValidation -->
               </div>
-              </h5>
-
-              <div class="table-responsive text-nowrap">
-                <table class="table">
-                  <thead>
-                    <tr class="text-nowrap">
-                      <th>Employee</th>
-                      <th>Document</th>
-                      <th>Access</th>
-                      <th style="width: 550px;">Duration in Office</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
-                        <img
-                          src="../../assets/img/avatars/3.png"
-                          alt="Avatar"
-                          class="rounded-circle"
-                          width="45"
-                          style="margin-right: 8px;"
-                        />
-                        <div>
-                          <h6 class="mb-0">Bans Evansot</h6>
-                          <small class="text-muted">Human Resources</small>
-                        </div>
-                      </div></th>
-                      <td>Non-Disclosure Agreement (NDA)</td>
-                      <td>Signatory</td>
-                      <td>
-                        <div class="progress-wrapper" style="position: relative;">
-                          <span class="text-muted" style="font-size:small">Progress: 97%</span>
-                          <div class="progress w-100 me-3" style="height: 8px">
-                            <div
-                              class="progress-bar bg-success"
-                              role="progressbar"
-                              style="width: 97%"
-                              aria-valuenow="54"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                          </div>
-                        </div>
-                    </td>
-                      <td>
-                        <div class="dropdown">
-                          <button
-                            class="btn p-0"
-                            type="button"
-                            id="activeProjects"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
-                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
-                        <img
-                          src="../../assets/img/avatars/3.png"
-                          alt="Avatar"
-                          class="rounded-circle"
-                          width="45"
-                          style="margin-right: 8px;"
-                        />
-                        <div>
-                          <h6 class="mb-0">Bans Evansot</h6>
-                          <small class="text-muted">Human Resources</small>
-                        </div>
-                      </div></th>
-                      <td>Project Proposal</td>
-                      <td>Editor</td>
-                      <td>
-                        <div class="progress-wrapper" style="position: relative;">
-                          <span class="text-muted" style="font-size:small">Progress: 97%</span>
-                          <div class="progress w-100 me-3" style="height: 8px">
-                            <div
-                              class="progress-bar bg-success"
-                              role="progressbar"
-                              style="width: 97%"
-                              aria-valuenow="54"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                          </div>
-                        </div>
-                    </td>
-                      <td>
-                        <div class="dropdown">
-                          <button
-                            class="btn p-0"
-                            type="button"
-                            id="activeProjects"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
-                            <a class="dropdown-item" href="admin_office.html">Go to Document</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    
-                    
-                    
-                    
-                    
-
-                  </tbody>
-                </table>
-
-              </div>
-
-
             </div>
-            <!--/ Progress -->
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header pb-3">
-                        <h5 class="m-0 card-title">All Your Documents</h5>
-                        </div>
-                        <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-8">
-                            <p>This is where you view the documents currently on your table. You can sign any unsigned documents that need your signature here.</p>
-                            <h6>Number of Documents on Your Table: 3</h6>
-                            <div id="totalRevenueChart"></div>
-                            </div>
-                            
-                            <div class="px-3">
-                                <div id="budgetChart"></div>
-                                
-                            </div>
-                            
-                            <div class="text-center mt-4">
-                              <a href="view_document.html" class='dt-button create-new btn btn-primary' tableindex='0' aria-controls="DataTables Table 0" type='button' style="background-color: #bae1ff !important; color: black !important;">
-                                <h6 class="mb-0 fw-semibold">View Document</h6>
-                              </a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
+
+            <!-- Share Project Modal -->
+            <div class="modal fade" id="shareProject" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-enable-otp modal-dialog-centered">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="text-center">
+                        <h3 class="mb-2">Add Members to the Document</h3>
+                      </div>
                     </div>
+                    <div class="mb-4 pb-2">
+                      <label for="select2Basic" class="form-label">Add Members</label>
+                      <select
+                        id="select2Basic"
+                        class="form-select form-select-lg share-project-select"
+                        data-allow-clear="true"
+                      >
+                        <option data-name="Adelaide Nichols" data-image="img/avatars/13.png" selected>
+                          Adelaide Nichols
+                        </option>
+                        <option data-name="Julian Murphy" data-image="img/avatars/9.png">Julian Murphy</option>
+                        <option data-name="Sophie Gilbert" data-image="img/avatars/10.png">Sophie Gilbert</option>
+                        <option data-name="Marvin Wheeler" data-image="img/avatars/7.png">Marvin Wheeler</option>
+                      </select>
+                    </div>
+                    <h4 class="mb-4 pb-2">8 Members</h4>
+                    <ul class="p-0 m-0">
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/1.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Lester Palmer</p>
+                            <p class="mb-0 text-muted">pe@vogeiz.net</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Edit</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/2.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Mattie Blair</p>
+                            <p class="mb-0 text-muted">peromak@zukedohik.gov</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Owner</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/3.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Marvin Wheeler</p>
+                            <p class="mb-0 text-muted">rumet@jujpejah.net</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Edit</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/4.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Nannie Ford</p>
+                            <p class="mb-0 text-muted">negza@nuv.io</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Comment</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/5.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Julian Murphy</p>
+                            <p class="mb-0 text-muted">lunebame@umdomgu.net</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can View</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/6.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Sophie Gilbert</p>
+                            <p class="mb-0 text-muted">ha@sugit.gov</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can View</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap mb-3">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/7.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Chris Watkins</p>
+                            <p class="mb-0 text-muted">zokap@mak.org</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Comment</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex flex-wrap">
+                        <div class="avatar me-3">
+                          <img src="../../assets/img/avatars/8.png" alt="avatar" class="rounded-circle" />
+                        </div>
+                        <div class="d-flex justify-content-between flex-grow-1">
+                          <div class="me-2">
+                            <p class="mb-0">Adelaide Nichols</p>
+                            <p class="mb-0 text-muted">ujinomu@jigo.com</p>
+                          </div>
+                          <div class="dropdown">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle p-2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <span class="text-muted fw-normal me-2 d-none d-sm-inline-block">Can Edit</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Owner</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Edit</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can Comment</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="javascript:void(0);">Can View</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="d-flex align-items-start mt-4 align-items-sm-center">
+                      <i class="ti ti-users me-2"></i>
+                      <div class="d-flex justify-content-between flex-grow-1 align-items-center flex-wrap gap-2">
+                        <button class="btn btn-primary">Add Members</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <hr class = "my-5">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header pb-3">
-                        <h5 class="m-0 card-title">File Documents</h5>
-                        </div>
-                        <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-8">
-                            <p>Add and file new documents here. Prepare the file to be process and submitted. Employees that need to sign on you document must be included before submitting the document.</p>
-                            <div id="totalRevenueChart"></div>
-                            </div>
-                            
-                            <div class="px-3">
-                                <div id="budgetChart"></div>
-                            </div>
-                            <div class="text-center mt-4">
-                              <a href="../admin/add_document.html" class='dt-button create-new btn btn-primary' tableindex='0' aria-controls="DataTables Table 0" type='button' style="background-color: #bae1ff !important; color: black !important;">
-                                <h6 class="mb-0 fw-semibold">Add Document</h6>
-                              </a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+              </div>
+              <!--/ Share Project Modal -->
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column"
+                >
+                  <div>
+                    ©
+                    <script>
+                      document.write(new Date().getFullYear());
+                    </script>
+                    , made with ❤️ by <a href="https://pixinvent.com" target="_blank" class="fw-semibold">Pixinvent</a>
+                  </div>
+                  <div>
+                    <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank"
+                      >License</a
+                    >
+                    <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4"
+                      >More Themes</a
+                    >
+
+                    <a
+                      href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Documentation</a
+                    >
+
+                    <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block"
+                      >Support</a
+                    >
+                  </div>
                 </div>
               </div>
             </footer>
@@ -748,24 +988,12 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
-    <script src="../../assets/vendor/libs/swiper/swiper.js"></script>
-
-    <script src="../../assets/vendor/libs/datatables/jquery.dataTables.js"></script>
-    <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-    <script src="../../assets/vendor/libs/datatables-responsive/datatables.responsive.js"></script>
-    <script src="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js"></script>
-    <script src="../../assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons/datatables-buttons.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.js"></script>
-    <script src="../../assets/vendor/libs/jszip/jszip.js"></script>
-    <script src="../../assets/vendor/libs/pdfmake/pdfmake.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons/buttons.html5.js"></script>
-    <script src="../../assets/vendor/libs/datatables-buttons/buttons.print.js"></script>
-    <!-- Flat Picker -->
+    <script src="../../assets/vendor/libs/select2/select2.js"></script>
+    <script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
     <script src="../../assets/vendor/libs/moment/moment.js"></script>
     <script src="../../assets/vendor/libs/flatpickr/flatpickr.js"></script>
-    <!-- Form Validation -->
+    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="../../assets/vendor/libs/tagify/tagify.js"></script>
     <script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
     <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
     <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
@@ -774,7 +1002,7 @@
     <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="../../assets/js/cards-advance.js"></script>
-    <script src="../../assets/js/tables-datatables-basic.js"></script>
+    <script src="../../assets/js/form-validation.js"></script>
+    <script src="../../assets/js/modal-share-project.js"></script>
   </body>
 </html>
