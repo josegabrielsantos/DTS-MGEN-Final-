@@ -58,71 +58,68 @@
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-      <!-- Menu -->
-      <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" ,
-        style="background-color: #bae1ff !important;">
-        <div class="app-brand demo">
-          <a href="../login.html" class="app-brand-link">
-            
-            <span class="app-brand-text demo menu-text fw-bold">DTS</span>
-          </a>
+        <!-- Menu -->
 
-          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
-            <i class="ti menu-toggle-icon d-none d-xl-block ti-sm align-middle"></i>
-            <i class="ti ti-x d-block d-xl-none ti-sm align-middle"></i>
-          </a>
-        </div>
-
-        <div class="menu-inner-shadow"></div>
-
-        <ul class="menu-inner py-1">
-          <!-- Dashboards -->
-          <li class="menu-item open">
-            <a href="dashboard.html" class="menu-link">
-              <i class="menu-icon tf-icons ti ti-smart-home"></i>
-              <div data-i18n="Dashboard">Dashboard</div>
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" , style="background-color: #bae1ff !important;">
+          <div class="app-brand demo">
+            <a href="../login.html" class="app-brand-link">
+              <span class="app-brand-text demo menu-text fw-bold">DTS</span>
             </a>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons ti ti-components"></i>
-              <div data-i18n="Teams">Teams</div>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+              <i class="ti menu-toggle-icon d-none d-xl-block ti-sm align-middle"></i>
+              <i class="ti ti-x d-block d-xl-none ti-sm align-middle"></i>
             </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="team_dashboard.html" class="menu-link">
-                  <div data-i18n="Accounting">Accounting</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="team_dashboard.html" class="menu-link">
-                  <div data-i18n="Administration">Administration</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="team_dashboard.html" class="menu-link">
-                  <div data-i18n="IT Department">IT Department</div>
-                </a>
-              </li><li class="menu-item">
-                <a href="team_dashboard.html" class="menu-link">
-                  <div data-i18n="Human Resources">Human Resources</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="team_dashboard.html" class="menu-link">
-                  <div data-i18n="Marketing">Marketing</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="team_dashboard.html" class="menu-link">
-                  <div data-i18n="Sales">Sales</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </aside>
-      <!-- / Menu -->
+          </div>
+          <div class="menu-inner-shadow"></div> 
+          <ul class="menu-inner py-1">
+            <!-- Dashboards -->
+            <li class="menu-item open">
+              <a href="dashboard.html" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                <div data-i18n="Teams">Teams</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="team_dashboard.html" class="menu-link">
+                    <div data-i18n="Accounting">Accounting</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="team_dashboard.html" class="menu-link">
+                    <div data-i18n="Administration">Administration</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="team_dashboard.html" class="menu-link">
+                    <div data-i18n="IT Department">IT Department</div>
+                  </a>
+                </li><li class="menu-item">
+                  <a href="team_dashboard.html" class="menu-link">
+                    <div data-i18n="Human Resources">Human Resources</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="team_dashboard.html" class="menu-link">
+                    <div data-i18n="Marketing">Marketing</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="team_dashboard.html" class="menu-link">
+                    <div data-i18n="Sales">Sales</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+        <!-- / Menu -->
 
       <!-- Layout container -->
       <div class="layout-page">
@@ -489,238 +486,223 @@
               </div>
               </h5>
 
-              
-                <div class="card-datatable table-responsive pt-0">
-                  <table class="datatables-basic table">
-                    <thead>
-                      <tr>
-                        <!-- <th></th> -->
-                        <th>Employee</th>
-                        <th>Document</th>
-                        <th>Current Office</th>
-                        <th style="width: 400px;">Progress</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
+              <div class="table-responsive text-nowrap">
+                <table class="table">
+                  <thead>
+                    <tr class="text-nowrap">
+                      <th>Employee</th>
+                      <th>Document</th>
+                      <th>Current Office</th>
+                      <th style="width: 550px;">Duration in Office</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/1.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Bans Evansot</h6>
+                          <small class="text-muted">Data Engineer</small>
+                        </div>
+                      </div></th>
+                      <td><a href="../../assets/img/images.png">Non-Disclosure Agreement (NDA)</a></td>
+                      <td>Administration</td>
+                      <td>
+                        <div class="progress-wrapper" style="position: relative;">
+                          <span class="text-muted" style="font-size:small">Progress: 93%</span>
+                          <div class="progress w-100 me-3" style="height: 8px">
+                            <div
+                              class="progress-bar bg-success"
+                              role="progressbar"
+                              style="width: 93%"
+                              aria-valuenow="54"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                          </div>
+                        </div>
+                    </td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_document.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/3.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Esem Megamol</h6>
+                          <small class="text-muted">Backend Developer</small>
+                        </div>
+                      </div></th>
+                      <td><a href="../../assets/img/images.png">Project Prosoal</a></td>
+                      <td>IT Department</td>
+                      <td>
+                        <div class="progress-wrapper" style="position: relative;">
+                          <span class="text-muted" style="font-size:small">Progress: 81%</span>
+                          <div class="progress w-100 me-3" style="height: 8px">
+                            <div
+                              class="progress-bar bg-success"
+                              role="progressbar"
+                              style="width: 81%"
+                              aria-valuenow="54"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                          </div>
+                        </div>
+                    </td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_document.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/2.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Unique Salompas</h6>
+                          <small class="text-muted">QA Engineer</small>
+                        </div>
+                      </div></th>
+                      <td><a href="../../assets/img/images.png">Intern Candidate List</a></td>
+                      <td>Human Resources</td>
+                      <td><div class="progress-wrapper" style="position: relative;">
+                        <span class="text-muted" style="font-size:small">Progress: 56%</span>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-warning"
+                            role="progressbar"
+                            style="width: 56%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div></td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_document.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><div class="d-flex w-50 align-items-center me-3">
+                        <img
+                          src="../../assets/img/avatars/5.png"
+                          alt="Avatar"
+                          class="rounded-circle"
+                          width="45"
+                          style="margin-right: 8px;"
+                        />
+                        <div>
+                          <h6 class="mb-0">Mac Dough</h6>
+                          <small class="text-muted">Frontend Developer</small>
+                        </div>
+                      </div></th>
+                      <td><a href="../../assets/img/images.png">Market Analysis Report</a></td>
+                      <td>Accounting</td>
+                      <td><div class="progress-wrapper" style="position: relative;">
+                        <span class="text-muted" style="font-size:small">Progress: 25%</span>
+                        <div class="progress w-100 me-3" style="height: 8px">
+                          <div
+                            class="progress-bar bg-danger"
+                            role="progressbar"
+                            style="width: 25%"
+                            aria-valuenow="54"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                        </div>
+                      </div></td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="activeProjects"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activeProjects">
+                            <a class="dropdown-item" href="admin_document.html">Go to Document</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Report</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+
+
             </div>
             <!--/ Progress -->
             <hr class="my-5">
-            <!-- Summary -->
-            <div class="col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-header d-flex justify-content-between">
-                  <h5 class="card-title m-0 me-2">All Offices</h5>
-                  <div class="dropdown">
-                    <button class="btn p-0" type="button" id="teamMemberList" data-bs-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                      <i class="ti ti-dots-vertical ti-sm text-muted"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="teamMemberList">
-                      <a class="dropdown-item" href="javascript:void(0);">Generate Report</a>
-                      <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="table-responsive">
-                  <table class="table table-borderless border-top">
-                    <thead class="border-bottom">
-                      <tr>
-                        <th>OFFICE</th>
-                        <th>Average</th>
-                        <th>Pending</th>
-                        <th>status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold"><a class="button" href="../manager/dashboard.html">IT Department</a></p>
-                              <small class="text-muted">Mr. Pande Coco</small>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">1 hour</p>
-                            <small class="text-muted text-nowrap">41 mins</small>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="mb-0 fw-semibold align">5</p>
-                        </td>
-                        <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold"><a class="button" href="../manager/dashboard.html">Human Resources</a></p>
-                              <small class="text-muted">Mrs. Spanish Bread</small>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">2 hours</p>
-                            <small class="text-muted text-nowrap">42 mins</small>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="mb-0 fw-semibold">4</p>
-                        </td>
-                        <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold"><a class="button" href="../manager/dashboard.html">Accounting</a></p>
-                              <small class="text-muted">Mrs. Lily Gaya</small>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">1 hours</p>
-                            <small class="text-muted text-nowrap">17 mins</small>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="mb-0 fw-semibold">2</p>
-                        </td>
-                        <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold"><a class="button" href="../manager/dashboard.html">Administration</a></p>
-                              <small class="text-muted">Mr. Argentina Corned Beef</small>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">3 hours</p>
-                            <small class="text-muted text-nowrap">2 mins</small>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="mb-0 fw-semibold">11</p>
-                        </td>
-                        <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold"><a class="button" href="../manager/dashboard.html">Sales</a></p>
-                              <small class="text-muted">Ms. Diwata Pares Overload</small>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">1 hours</p>
-                            <small class="text-muted text-nowrap">32 mins</small>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="mb-0 fw-semibold">0</p>
-                        </td>
-                        <td><span class="badge bg-label-success">Completed</span></td>
-
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex justify-content-start align-items-center">
-                            <div class="d-flex flex-column">
-                              <p class="mb-0 fw-semibold"><a class="button" href="../manager/dashboard.html">Marketing</a></p>
-                              <small class="text-muted">Mrs. Champoradong Malabnaw</small>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="d-flex flex-column">
-                            <p class="mb-0 fw-semibold">2 hours</p>
-                            <small class="text-muted text-nowrap">29 mins</small>
-
-                          </div>
-                        </td>
-                        <td>
-                          <p class="mb-0 fw-semibold">6</p>
-                        </td>
-                        <td><span class="badge bg-label-secondary">Incomplete</span></td>
-
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <!--/ Summary -->
-              <!-- Donut Chart -->
-              <div class="col-md-6 col-12 mb-4">
-                <div class="card">
-                  <div class="card-header d-flex align-items-center justify-content-between">
-                    <div>
-                      <h5 class="card-title mb-0">Ratio of Time Per Office</h5>
-                      <small class="text-muted">Spending on various categories</small>
-                    </div>
-                    <div class="dropdown d-none d-sm-flex">
-                      <button
-                        type="button"
-                        class="btn dropdown-toggle px-0"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <i class="ti ti-calendar"></i>
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Today</a>
-                        </li>
-                        <li>
-                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Yesterday</a>
-                        </li>
-                        <li>
-                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"
-                            >Last 7 Days</a
-                          >
-                        </li>
-                        <li>
-                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"
-                            >Last 30 Days</a
-                          >
-                        </li>
-                        <li>
-                          <hr class="dropdown-divider" />
-                        </li>
-                        <li>
-                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"
-                            >Current Month</a
-                          >
-                        </li>
-                        <li>
-                          <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Last Month</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div id="donutChart"></div>
-                  </div>
-                </div>
-              </div>
-              <!-- /Donut Chart -->
 
             <!-- Latest Document -->
             <div class="col-lg-6 col-md-12 mb-4">
